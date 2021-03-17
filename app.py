@@ -26,7 +26,8 @@ def predict_api():
     data= request.get_json(force=True)
     prediction= model.predict([np.array(list(data.values()))])
     
-    output=prediction[0]
+   
+    output = round(prediction[0], 2)
     return jsonify(output)
     
     
