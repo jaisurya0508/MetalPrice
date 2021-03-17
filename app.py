@@ -17,7 +17,7 @@ def predict():
     prediction=model.predict(final_features)
     
     
-    output=round(prediction[0],2)
+    output = round(prediction[0], 2)
     
     return render_template('index.html',prediction_text='Close  Rate is Rs{}'.format(output))
 @app.route('/predict_api',methods=['POST'])
@@ -26,8 +26,8 @@ def predict_api():
     data= request.get_json(force=True)
     prediction= model.predict([np.array(list(data.values()))])
     
-   
-    output = round(prediction[0], 2)
+    output=prediction[0]
+    
     return jsonify(output)
     
     
