@@ -19,7 +19,7 @@ def predict():
     
     output =round(prediction[0], 2)
     
-    return render_template('index.html',prediction_text='Close  Rate is Rs{}'.format(output))
+    return render_template('index.html',prediction_text='The next day Rate is Rs{}'.format(output))
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     
